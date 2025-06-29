@@ -1,4 +1,4 @@
-![logo]([https://github.com/WrittenByAli/UNO-by-Ali/blob/main/uno%20redme.png](https://github.com/WrittenByAli/Dinosaur-Game/blob/main/DinoGame_OG-logo.jpg.jpg)
+![logo]("DinoGame_OG-logo.jpg.jpg")
 <h1 align="center">🦖 Google Dinosaur Game Clone</h1>
 
 <p align="center">
