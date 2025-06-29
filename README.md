@@ -1,4 +1,6 @@
-![logo](https://github.com/WrittenByAli/Dinosaur-Game/blob/main/DinoGame_OG-logo.jpg.jpg)
+<p align="center">
+  <img src="https://github.com/WrittenByAli/Dinosaur-Game/blob/main/DinoGame_OG-logo.jpg.jpg" alt="logo" width="300"/>
+</p>
 <h1 align="center">🦖 Google Dinosaur Game Clone</h1>
 
 <p align="center">
