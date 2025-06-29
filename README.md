@@ -5,19 +5,6 @@
   A nostalgic Chrome Dino clone built with 💻 HTML, 🎨 CSS, and ⚙️ JavaScript.
 </p>
 
-<p align="center">
-  <img src="screenshot.png" alt="Game Screenshot" width="600"/>
-</p>
-
----
-
-## 🚀 Live Demo
-
-👉 [Play the Game Now](#)  
-*(Add your live link or GitHub Pages link here)*
-
----
-
 ## 🎯 About the Project
 
 Had a bit of free time and thought, *"Why not recreate something fun?"*  
