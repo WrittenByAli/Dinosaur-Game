@@ -30,7 +30,22 @@ So here's my take on the classic Google Dinosaur Game – a simple, lightweight 
 - Avoid the cacti and beat your high score! 🏆
 
 ---
+## ✨ Features
 
-## 📁 Folder Structure
+- 🌵 Jump over obstacles (cacti)
+- 🔄 Infinite scrolling background
+- 📊 Real-time score counter
+- 💥 Game Over detection
+- ⌨️ Keyboard controls (spacebar to jump)
 
+---
+## 🙋‍♂️ Author
 
+**Muhammad Ali**  
+📬 [GitHub Profile](https://github.com/WrittenByAli)  
+📝 *Portfolio Coming Soon*
+
+---
+## ⭐ Show Your Support
+
+If you like this project, please consider giving it a ⭐ on GitHub — it really helps!
