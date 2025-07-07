@@ -1,0 +1,385 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #c04848 0%, #480048 100%);
+    max-height: 90vh;
+    min-height: 90vh;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Cinematic Intro */
+.cinematic-intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #000000 0%, #1a1a2e 50%, #16213e 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.intro-content {
+    text-align: center;
+    color: white;
+    animation: contentSlideUp 2s ease-out 1s both;
+}
+
+.intro-title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+.developer-credit {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    animation: creditGlow 2s ease-in-out infinite alternate;
+}
+
+.intro-animation {
+    height: 60px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.typing-text {
+    font-size: 1.2rem;
+    color: #ffffff;
+    border-right: 2px solid #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+.start-game-btn {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 30px;
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+    transition: all 0.3s ease;
+    animation: buttonPulse 2s ease-in-out infinite;
+}
+
+.start-game-btn:hover {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(255, 107, 107, 0.6);
+}
+
+/* Intro Animations */
+@keyframes introFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes contentSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes creditGlow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.6);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #ffffff;
+    }
+}
+
+@keyframes buttonPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+.cinematic-intro.hidden {
+    display: none;
+}
+
+
+.game_box {
+    width: 1050px;
+    height: 540px;
+    border: 4px solid #8B4513;
+    margin: 10vh auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #87CEEB 0%, #98FB98 60%, #F4A460 100%);
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.game_box:hover {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.game_box .dinosaur {
+    width: 100px;
+    height: 100px;
+    background-image: url('images/dinosaur.png');
+    align-self: flex-end;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+.dinosaur:hover {
+    filter: drop-shadow(3px 6px 9px rgba(0, 0, 0, 0.3));
+}
+
+.day-theme {
+    background: linear-gradient(to bottom, #87CEEB 0%, #98FB98 60%, #F4A460 100%);
+}
+
+/* Night Mode Background */
+.night-theme {
+    background: linear-gradient(to bottom, #106688 0%, #95f795 60%, #fffefd 100%);
+}
+
+.game_box .obstacles {
+    width: 100px;
+    height: 100px;
+    background-image: url('images/obstacle.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+    will-change: transform;
+    transition: right 0.1s linear; /* Smooth movement */
+}
+
+.dinosaur, .obstacles {
+    transition: all 0.3s ease;
+}
+
+/* Smooth obstacle movement */
+.obstacles {
+    transition: right 0.1s linear !important;
+}
+
+/* Score display */
+.score-display {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+    transition: all 0.3s ease;
+}
+
+.score-display:hover {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+.restart-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff6347, #ff4500);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    display: none;
+    z-index: 30;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.restart-btn:hover {
+    background: linear-gradient(45deg, #ff4500, #ff6347);
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.restart-btn:active {
+    transform: translate(-50%, -50%) scale(0.95);
+}
+
+/* Game over overlay */
+.game-over-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 25;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.game-over-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: gameOverAppear 0.5s ease-out;
+    transition: all 0.3s ease;
+}
+
+.game-over-content:hover {
+    transform: scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes gameOverAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Particle effects for collision */
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ff6347;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 15;
+    animation: particleExplode 1s ease-out forwards;
+    transition: all 0.3s ease;
+}
+
+@keyframes particleExplode {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0) translate(var(--tx), var(--ty));
+    }
+}
+
+
+
+@media (max-width: 1100px) {
+    .game_box {
+        width: 90vw;
+        height: 50vh;
+        margin: 15vh auto;
+    }
+    
+    .game_box .dinosaur,
+    .game_box .obstacles {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+.music-widget {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 50;
+}
+
+#music-toggle {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(101, 73, 255, 0.5);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#music-toggle:hover {
+    background: linear-gradient(45deg, #2575fc, #6a11cb);
+    transform: scale(1.05);
+}
+
+
+
